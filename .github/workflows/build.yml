@@ -26,12 +26,14 @@ jobs:
     - name: build servicing
       run: |
           dir tools\servicing
-          .\tools\servicing\build.cmd
+          cd tools\servicing\
+          .\build.cmd
           
     - name: build bordeline
       run: |
           dir tools\borderline
-          .\tools\bordeline\build.cmd
+          cd tools\borderline
+          .\build.cmd
     - name: dir
       run: |
           dir /s /b 
