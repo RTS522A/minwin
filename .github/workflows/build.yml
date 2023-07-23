@@ -18,12 +18,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.3.1
       with:
         msbuild-architecture: x64
-    - name: setup vcpkg (cached, if possible)
-      uses: lukka/run-vcpkg@v3.3
-      with:
-        vcpkgDirectory: ${{ env.VCPKG_DEST_WIN }}
-        vcpkgGitCommitId: ${{ env.VCPKG_COMMIT }}
-        setupOnly: true
+
     - name: setup devcmd
       uses: ilammy/msvc-dev-cmd@v1.3.0
       
