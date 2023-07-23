@@ -19,8 +19,11 @@ jobs:
       with:
         msbuild-architecture: x64
 
+    - uses: lukka/get-cmake@latest
+    - name: Setup vcpkg (it does not install any package yet)
+      uses: lukka/run-vcpkg@v11
     - name: setup devcmd
-      uses: ilammy/msvc-dev-cmd@v1.3.0
+      uses: ilammy/msvc-dev-cmd@latest
       
     - name: Retrieve and build all available solutions
       run: |
