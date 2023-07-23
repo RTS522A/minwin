@@ -39,5 +39,5 @@ jobs:
       with:
           name: Release
           path: |
-            tools\borderline\bin\x64\Release\netcoreapp3.1\borderline.dll
+            tools\borderline\bin\x64\Release\netcoreapp3.1\publish\borderline.dll
             tools\servicing\servicing.exe
