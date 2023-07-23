@@ -21,8 +21,6 @@ jobs:
     - uses: ilammy/msvc-dev-cmd@v1
 
     - uses: lukka/get-cmake@latest
-    - name: Setup vcpkg (it does not install any package yet)
-      uses: lukka/run-vcpkg@v11
 
       
     - name: Retrieve and build all available solutions
