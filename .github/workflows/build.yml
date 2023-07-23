@@ -23,13 +23,15 @@ jobs:
     - uses: lukka/get-cmake@latest
 
       
-    - name: Retrieve and build all available solutions
+    - name: build servicing
       run: |
           dir tools\servicing
-          cd .\tools\servicing\
-          .\build.cmd
-          cd ..\..\
+          .\tools\servicing\build.cmd
+          
+    - name: build bordeline
+      run: |
           dir tools\borderline
-          cd .\tools\bordeline\
-          .\tools\borderline\build.cmd
+          .\tools\bordeline\build.cmd
+    - name: dir
+      run: |
           dir /s /b 
