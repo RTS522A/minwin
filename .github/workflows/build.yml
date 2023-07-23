@@ -34,6 +34,10 @@ jobs:
           dir tools\borderline
           cd tools\borderline
           .\build.cmd
-    - name: dir
-      run: |
-          dir /s /b 
+
+    - uses: actions/upload-artifact@v3
+      with:
+          name: Release
+          path: |
+            tools\borderline\bin\x64\Release\netcoreapp3.1\borderline.dll
+            tools\servicing\servicing.exe
