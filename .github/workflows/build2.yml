@@ -1,0 +1,43 @@
+name: BUILD2
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build driver samples
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Release]
+        platform: [x64]
+    runs-on: windows-2022
+    steps:
+    - uses: actions/checkout@v3
+      with:
+          submodules: 'recursive'
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.3.1
+      with:
+        msbuild-architecture: x64
+    - uses: ilammy/msvc-dev-cmd@v1
+
+    - uses: lukka/get-cmake@latest
+
+      
+    - name: build servicing
+      run: |
+          dir tools\servicing
+          cd tools\servicing\
+          .\build.cmd
+          
+    - name: build bordeline
+      run: |
+          dir tools\borderline
+          cd tools\borderline
+          .\build.cmd
+
+    - uses: actions/upload-artifact@v3
+      with:
+          name: Release
+          path: |
+            .
+            
